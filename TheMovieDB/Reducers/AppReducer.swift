@@ -9,5 +9,7 @@
 import ReSwift
 
 func appReducer(action: Action, state: AppState?) -> AppState {
+    return AppState(nowPlayingState: nowPlayingReducer(action: action, state: state?.nowPlayingState), popularMoviesState: popularMoviesReducer(action: action, state: state?.popularMoviesState))
+    
     
 }

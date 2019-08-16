@@ -10,5 +10,5 @@ import Foundation
 import ReSwift
 
 struct PopularMoviesState: StateType {
-    
+    var table: DataState
 }

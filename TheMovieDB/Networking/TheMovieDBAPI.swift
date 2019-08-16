@@ -4,6 +4,82 @@
 //   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
+import UIKit
+
+private let apiKey = "1edfceba775463029aa5c3bb03d50769"
+
+class Network {
+    
+    static func nowPlaying(completionHandler: @escaping ([Result]?, Error?) -> Void) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)&language=en-US&page=1") else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completionHandler(nil, error)
+            }
+            
+            let decoder = JSONDecoder()
+            let resp = try? decoder.decode(NowPlaying.self, from: data!)
+            completionHandler(resp?.results, nil)
+        }
+        task.resume()
+    }
+    
+    
+    static func popular(completionHandler: @escaping ([Result]?, Error?) -> Void) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=en-US&page=1") else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completionHandler(nil, error)
+            } else if let data = data{
+                let decoder = JSONDecoder()
+                let resp = try?  decoder.decode(Popular.self, from: data)
+                completionHandler(resp?.results, nil)
+            }
+            
+        }
+        task.resume()
+    }
+    
+    static func movieDetails(id: Int, completionHandler: @escaping (Details?, Error?) -> Void) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=\(apiKey)&language=en-US") else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completionHandler(nil, error)
+            } else if let data = data {
+                let decoder = JSONDecoder()
+                let resp = try? decoder.decode(Details.self, from: data)
+                completionHandler(resp, nil)
+            }
+        }
+        task.resume()
+    }
+    
+    
+    static func moviePoster(imagePath: String, completioHandler: @escaping (Data?, String?) -> Void) {
+        let urlBase = "https://image.tmdb.org/t/p/w500"
+        let finalURL = urlBase + imagePath
+        
+        if let url = URL(string: finalURL) {
+            DispatchQueue.global(qos: .background).async {
+                if let data =  try? Data(contentsOf: url) {
+                    completioHandler(data, imagePath)
+                } else {
+                    completioHandler(nil, nil)
+                }
+            }
+        } else {
+            completioHandler(nil, nil)
+        }
+    }
+    
+}
+
+
+
+
 
 
 // MARK: - NowPlaying
