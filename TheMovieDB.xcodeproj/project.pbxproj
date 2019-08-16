@@ -18,6 +18,8 @@
 		899C71F423071FEE007AB2F0 /* PopularMoviesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C71F323071FEE007AB2F0 /* PopularMoviesState.swift */; };
 		899C71F8230722C3007AB2F0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C71F7230722C3007AB2F0 /* MainViewController.swift */; };
 		899C71FA23072833007AB2F0 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C71F923072833007AB2F0 /* AppReducer.swift */; };
+		89EEA4F623072E4F004DA24A /* NowPlayingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EEA4F523072E4F004DA24A /* NowPlayingReducer.swift */; };
+		89EEA4F823072E5E004DA24A /* PopularMoviesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EEA4F723072E5E004DA24A /* PopularMoviesReducer.swift */; };
 		E8EA8DE97DBF9EB915BC2F44 /* Pods_TheMovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507D69D3F0C81BAA298CF9AD /* Pods_TheMovieDB.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		899C71F323071FEE007AB2F0 /* PopularMoviesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesState.swift; sourceTree = "<group>"; };
 		899C71F7230722C3007AB2F0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		899C71F923072833007AB2F0 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		89EEA4F523072E4F004DA24A /* NowPlayingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingReducer.swift; sourceTree = "<group>"; };
+		89EEA4F723072E5E004DA24A /* PopularMoviesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,6 @@
 				8965D9452305F2A3001519BE /* Reducers */,
 				8965D9442305F29F001519BE /* Actions */,
 				8965D9412305F27B001519BE /* View */,
-				8965D93223048C15001519BE /* Main.storyboard */,
 			);
 			path = TheMovieDB;
 			sourceTree = "<group>";
@@ -109,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				899C71F7230722C3007AB2F0 /* MainViewController.swift */,
+				8965D93223048C15001519BE /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				899C71F923072833007AB2F0 /* AppReducer.swift */,
+				89EEA4F523072E4F004DA24A /* NowPlayingReducer.swift */,
+				89EEA4F723072E5E004DA24A /* PopularMoviesReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -280,8 +286,10 @@
 				899C71F8230722C3007AB2F0 /* MainViewController.swift in Sources */,
 				8965D93123048C15001519BE /* ViewController.swift in Sources */,
 				899C71F223071FD7007AB2F0 /* NowPlayingState.swift in Sources */,
+				89EEA4F823072E5E004DA24A /* PopularMoviesReducer.swift in Sources */,
 				8965D92F23048C15001519BE /* AppDelegate.swift in Sources */,
 				8965D94A2305F334001519BE /* TheMovieDBAPI.swift in Sources */,
+				89EEA4F623072E4F004DA24A /* NowPlayingReducer.swift in Sources */,
 				899C71F423071FEE007AB2F0 /* PopularMoviesState.swift in Sources */,
 				899C71FA23072833007AB2F0 /* AppReducer.swift in Sources */,
 				899C71F023071B8C007AB2F0 /* AppState.swift in Sources */,
@@ -431,6 +439,7 @@
 			baseConfigurationReference = 3C1E070A8A6DB944431C3A90 /* Pods-TheMovieDB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7WV6D6894;
 				INFOPLIST_FILE = "$(SRCROOT)/TheMovieDB/Support/Info.plist";
@@ -440,6 +449,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.romaciel.TheMovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,6 +460,7 @@
 			baseConfigurationReference = 55CA374EC2D583D4C2B4C884 /* Pods-TheMovieDB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7WV6D6894;
 				INFOPLIST_FILE = "$(SRCROOT)/TheMovieDB/Support/Info.plist";
@@ -459,6 +470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.romaciel.TheMovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
