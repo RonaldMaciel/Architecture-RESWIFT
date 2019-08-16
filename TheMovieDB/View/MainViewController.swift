@@ -13,10 +13,14 @@ class MainViewController: UIViewController {
 
     // Outlets
     // @
+    @IBOutlet weak var nowPlayingCollection: UICollectionView!
+
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nowPlayingCollection.delegate = self
+        nowPlayingCollection.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -41,8 +45,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath) as! NowPlayingCollectionViewCell
+        cell.hatingLabel.text = "4.0"
+        cell.movieTitleLabel.text = "LalaLand"
         return cell
     }
     
