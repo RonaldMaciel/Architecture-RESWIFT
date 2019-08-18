@@ -9,7 +9,6 @@ import UIKit
 private let apiKey = "1edfceba775463029aa5c3bb03d50769"
 
 class Network {
-    
     static func nowPlaying(completionHandler: @escaping ([Result]?, Error?) -> Void) {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)&language=en-US&page=1") else { return }
         
@@ -58,28 +57,24 @@ class Network {
     }
     
     
-    static func moviePoster(imagePath: String, completioHandler: @escaping (Data?, String?) -> Void) {
+    static func moviePoster(imagePath: String, completionHandler: @escaping (Data?, String?) -> Void) {
         let urlBase = "https://image.tmdb.org/t/p/w500"
         let finalURL = urlBase + imagePath
         
         if let url = URL(string: finalURL) {
             DispatchQueue.global(qos: .background).async {
                 if let data =  try? Data(contentsOf: url) {
-                    completioHandler(data, imagePath)
+                    completionHandler(data, imagePath)
                 } else {
-                    completioHandler(nil, nil)
+                    completionHandler(nil, nil)
                 }
             }
         } else {
-            completioHandler(nil, nil)
+            completionHandler(nil, nil)
         }
     }
     
 }
-
-
-
-
 
 
 // MARK: - NowPlaying
