@@ -24,7 +24,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Mis-o0-fwK">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Mis-o0-fwK">
                                 <rect key="frame" x="0.0" y="173" width="414" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Jll-ci-mE8"/>
@@ -75,25 +75,25 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="320" id="1Zr-27-V28"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OnJ-Zr-rXc">
-                                                        <size key="itemSize" width="217" height="315"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OnJ-Zr-rXc">
+                                                        <size key="itemSize" width="178" height="299"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NowPlayingCollectionViewCell" id="r8S-de-LZZ" customClass="NowPlayingCollectionViewCell" customModule="TheMovieDB" customModuleProvider="target">
-                                                            <rect key="frame" x="98.5" y="0.0" width="217" height="315"/>
+                                                            <rect key="frame" x="0.0" y="10.5" width="178" height="299"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="217" height="315"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="178" height="299"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-PG-r0N">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="217" height="251"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="201"/>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="KNT-DR-4PP">
-                                                                        <rect key="frame" x="32" y="292" width="57" height="13"/>
+                                                                        <rect key="frame" x="32" y="242" width="57" height="13"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Icon" translatesAutoresizingMaskIntoConstraints="NO" id="4TR-5S-GmZ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="13" height="13"/>
@@ -111,7 +111,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Principe Ali  de Ali Ababua" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqb-7d-Xm2">
-                                                                        <rect key="frame" x="8" y="267" width="169.5" height="17"/>
+                                                                        <rect key="frame" x="8" y="217" width="169.5" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -129,9 +129,9 @@
                                                                 <constraint firstItem="KNT-DR-4PP" firstAttribute="top" secondItem="Wqb-7d-Xm2" secondAttribute="bottom" constant="8" id="tPF-Z8-Tdx"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="hatingLabel" destination="jL1-3Y-RWz" id="I8c-M8-qx4"/>
-                                                                <outlet property="movieImageView" destination="Y9I-PG-r0N" id="rzh-Vx-FoG"/>
+                                                                <outlet property="movieImageView" destination="Y9I-PG-r0N" id="g6K-S6-m9I"/>
                                                                 <outlet property="movieTitleLabel" destination="Wqb-7d-Xm2" id="wC8-N2-Qh3"/>
+                                                                <outlet property="ratingLabel" destination="jL1-3Y-RWz" id="I8c-M8-qx4"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -147,6 +147,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="2OO-VP-YOl" secondAttribute="bottom" constant="326.5" id="xLv-e1-e72"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nowPlayingCollection" destination="OTZ-2w-foG" id="0zX-Xf-kBk"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="k4S-tg-ezc">
                                         <rect key="frame" x="0.0" y="415" width="414" height="44"/>
@@ -168,7 +171,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="138" id="dOl-1L-Qyn" customClass="PopularMovieTableViewCell" customModule="TheMovieDB" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopularTableViewCell" rowHeight="138" id="dOl-1L-Qyn" customClass="PopularMovieTableViewCell" customModule="TheMovieDB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="459" width="414" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dOl-1L-Qyn" id="qkE-AZ-XHW">
@@ -179,6 +182,7 @@
                                                     <rect key="frame" x="20" y="11" width="79" height="118"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="79" id="1u0-xe-Tfx"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="118" id="DA9-ff-hUX"/>
                                                         <constraint firstAttribute="height" constant="118" id="TIC-uU-czs"/>
                                                     </constraints>
                                                 </imageView>

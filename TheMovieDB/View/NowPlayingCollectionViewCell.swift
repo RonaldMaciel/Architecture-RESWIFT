@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class NowPlayingCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var hatingLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
 }

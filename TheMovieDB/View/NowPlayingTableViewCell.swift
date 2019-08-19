@@ -11,4 +11,13 @@ import UIKit
 
 class NowPlayingTableViewCell: UITableViewCell{
     
+    @IBOutlet weak var nowPlayingCollection: UICollectionView!
+
+//    func viewDidLoad() {
+//        nowPlayingCollection.delegate = MainViewController as! UICollectionViewDelegate
+//        nowPlayingCollection.dataSource = MainViewController
+//    }
 }
+
+
+

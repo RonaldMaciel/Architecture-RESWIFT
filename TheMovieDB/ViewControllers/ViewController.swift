@@ -10,14 +10,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var cache = NSCache<NSString, AnyObject>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ok")
-        
-        //movieImageView
-        @IBOutlet weak var imageView: UIImageView!
-        
-        var cache = NSCache<NSString, AnyObject>()
         
         
         Network.nowPlaying() { result, error in
@@ -30,7 +27,7 @@ class ViewController: UIViewController {
             
             if let imageObject = self.cache.object(forKey: "/keym7MPn1icW1wWfzMnW3HeuzWU.jpg") {
                 print("Cache hit!")
-                self.imageView.image = imageObject as? UIImage
+//                self.imageView.image = imageObject as? UIImage
             } else {
                 Network.moviePoster(imagePath: result[0].posterPath!, completionHandler: { (data, path) in
                     DispatchQueue.main.async { [weak self] in
@@ -39,7 +36,7 @@ class ViewController: UIViewController {
                         guard let path = path else { return }
                         
                         let image = UIImage(data: data)
-                        self.imageView.image = image
+//                        self.imageView.image = image
                         self.cache.setObject(image!, forKey: NSString(string: path))
                     }
                 })

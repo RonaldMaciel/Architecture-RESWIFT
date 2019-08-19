@@ -9,7 +9,7 @@ import UIKit
 private let apiKey = "1edfceba775463029aa5c3bb03d50769"
 
 class Network {
-    static func nowPlaying(completionHandler: @escaping ([Result]?, Error?) -> Void) {
+    static func nowPlaying(completionHandler: @escaping ([Movie]?, Error?) -> Void) {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)&language=en-US&page=1") else { return }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -25,7 +25,7 @@ class Network {
     }
     
     
-    static func popular(completionHandler: @escaping ([Result]?, Error?) -> Void) {
+    static func popular(completionHandler: @escaping ([Movie]?, Error?) -> Void) {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=en-US&page=1") else { return }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -63,14 +63,27 @@ class Network {
         
         if let url = URL(string: finalURL) {
             DispatchQueue.global(qos: .background).async {
-                if let data =  try? Data(contentsOf: url) {
+                if let data = try? Data(contentsOf: url) {
                     completionHandler(data, imagePath)
+                    print(data)
+                    print(imagePath)
                 } else {
                     completionHandler(nil, nil)
+                    print("completionHandler DONE")
                 }
             }
         } else {
             completionHandler(nil, nil)
+        }
+    }
+    
+    static func getImageAPI(imagePath: String, completion: @escaping(UIImage?) -> Void) {
+        let urlBase = "https://image.tmdb.org/t/p/w500\(imagePath)"
+        
+        DispatchQueue.main.async {
+            let url = URL(string: urlBase)
+            let data = try? Data(contentsOf: url!)
+            completion(UIImage(data: data!))
         }
     }
     
@@ -79,7 +92,7 @@ class Network {
 
 // MARK: - NowPlaying
 struct NowPlaying: Codable {
-    let results: [Result]?
+    let results: [Movie]?
     let page, totalResults: Int?
     let dates: Dates?
     let totalPages: Int?
@@ -95,7 +108,7 @@ struct NowPlaying: Codable {
 // MARK: - Popular
 struct Popular: Codable {
     let page, totalResults, totalPages: Int?
-    let results: [Result]?
+    let results: [Movie]?
     
     enum CodingKeys: String, CodingKey {
         case page
@@ -125,7 +138,7 @@ struct Details: Codable {
     let spokenLanguages: [SpokenLanguage]?
     let status, tagline, title: String?
     let video: Bool?
-    let voteAverage, voteCount: Int?
+    let voteAverage, voteCount: Double?
     
     enum CodingKeys: String, CodingKey {
         case adult
@@ -209,8 +222,8 @@ struct BelongsToCollection: Codable {
     }
 }
 
-// MARK: - Result
-struct Result: Codable{
+// MARK: - Movie
+struct Movie: Codable{
     let voteCount: Int?
     let id: Int?
     let video: Bool?
