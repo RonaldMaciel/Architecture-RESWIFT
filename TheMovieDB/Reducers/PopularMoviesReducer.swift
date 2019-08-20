@@ -9,6 +9,6 @@
 import ReSwift
 
 func popularMoviesReducer(action: Action, state: PopularMoviesState?) -> PopularMoviesState {
-    var state = state ?? PopularMoviesState(table: .loading)
+    var state = state ?? PopularMoviesState(table: .loading, tableState: state!.tableState, movies: state!.movies)
     return state
 }

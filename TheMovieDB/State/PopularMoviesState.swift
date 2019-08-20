@@ -11,4 +11,6 @@ import ReSwift
 
 struct PopularMoviesState: StateType {
     var table: DataState
+    var tableState: DataState
+    var movies: [MoviesStruct]
 }

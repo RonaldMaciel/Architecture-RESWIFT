@@ -9,6 +9,6 @@
 import ReSwift
 
 func nowPlayingReducer(action: Action, state: NowPlayingState?) -> NowPlayingState {
-    var state = state ?? NowPlayingState(movies: .loading)
+    var state = state ?? NowPlayingState(movies: .loading, collectionState: (state?.collectionState)!)
     return state
 }

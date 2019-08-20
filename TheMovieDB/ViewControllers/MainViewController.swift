@@ -18,13 +18,15 @@ class MainViewController: UIViewController {
     var moviesNowPlaying: [MoviesStruct] = []
     var moviesPopular: [MoviesStruct] = []
     var image = UIImage()
-     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
-    
+        
+        let tap = UIGestureRecognizer(target: self.view, action: #selector(dismissKeyboard))
+        
         Network.nowPlaying() { result, error in
             if let error = error {
                 print("error")
@@ -81,9 +83,9 @@ class MainViewController: UIViewController {
                 })
             }
             
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
+            //            DispatchQueue.main.async {
+            //                self.tableView.reloadData()
+            //            }
         }
         
         
@@ -129,13 +131,13 @@ class MainViewController: UIViewController {
                     }
                     
                     guard let details = details else { return }
-//                    print("\n\(details.originalTitle)")
+                    //                    print("\n\(details.originalTitle)")
                     auxMovie.title = details.originalTitle ?? ""
                     auxMovie.rating = details.voteAverage ?? -1
                     auxMovie.description = details.overview ?? ""
                     for genre in details.genres ?? [] {
                         auxMovie.genres.append(genre.name ?? "")
-//                        print(auxMovie.genres)
+                        //                        print(auxMovie.genres)
                     }
                     
                     self.moviesPopular.append(auxMovie)
@@ -149,6 +151,7 @@ class MainViewController: UIViewController {
             
         }
         
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,12 +174,16 @@ class MainViewController: UIViewController {
         }
         
     }
+    
     @IBAction func seeAllAction(_ sender: UIButton) {
-        
-    print("Alo galera de piao")
-       performSegue(withIdentifier: "goToCollection", sender: nil)
+        print("Alo galera de piao")
+        performSegue(withIdentifier: "goToCollection", sender: nil)
     }
     
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 
@@ -189,7 +196,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = moviesPopular[indexPath.row]
         self.navigationController?.isNavigationBarHidden = false
-
+        
         performSegue(withIdentifier: "goToDetail", sender: cell)
     }
     
@@ -200,6 +207,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
             cell.nowPlayingCollection.delegate = self
             cell.nowPlayingCollection.dataSource = self
             cell.nowPlayingCollection.reloadData()
+            
             return cell
         } else if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier:"PopularMoviesTitle", for: indexPath)
@@ -238,7 +246,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = moviesNowPlaying[indexPath.row]
         self.navigationController?.isNavigationBarHidden = false
-
+        
         performSegue(withIdentifier: "goToDetail", sender: cell)
     }
     
@@ -255,18 +263,40 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
+// MARK: - Store Subscriber
 extension MainViewController: StoreSubscriber {
-    func newState(state: NowPlayingState) {
-        switch state.movies {
-        case .loading:
-            print("a")
-        case .done:
-            print("b")
-        case .networkError:
-            print("c")
+    func newState(state: (state1: NowPlayingState, state2: PopularMoviesState)) {
+        
+        let nowPlayingCollection = state.state1.collectionState
+        let popularTable = state.state2.tableState
+        
+        switch (nowPlayingCollection, popularTable) {
+        case (_, .done):
+            DispatchQueue.main.async {
+                self.moviesPopular = state.state2.movies
+                self.tableView.reloadData()
+                self.tableView.isHidden = false
+            }
+            
+        case (_, .error):
+            DispatchQueue.main.async {
+                self.tableView.isHidden = true
+            }
+            
+        case (.done, .loading),
+             (.error, .loading):
+//            _ = self.fetchPopular(state: state.state2, store: store)
+            DispatchQueue.main.async {
+                self.tableView.isHidden = true
+            }
+            
+        default:
+            DispatchQueue.main.async {
+                self.tableView.isHidden = true
+            }
         }
     }
-    
 }
+
 
 

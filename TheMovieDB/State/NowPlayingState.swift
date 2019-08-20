@@ -9,10 +9,11 @@ import ReSwift
 
 struct NowPlayingState: StateType {
     var movies: DataState
+    var collectionState: DataState
 }
 
 enum DataState {
     case loading
     case done
-    case networkError
+    case error
 }

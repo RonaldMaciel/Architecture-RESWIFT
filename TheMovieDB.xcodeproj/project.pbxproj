@@ -20,6 +20,7 @@
 		8965D93623048C15001519BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8965D93523048C15001519BE /* Assets.xcassets */; };
 		8965D93923048C15001519BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8965D93723048C15001519BE /* LaunchScreen.storyboard */; };
 		8965D94A2305F334001519BE /* TheMovieDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965D9492305F334001519BE /* TheMovieDBAPI.swift */; };
+		897F344B230C9D77009D5CA0 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897F344A230C9D77009D5CA0 /* Actions.swift */; };
 		899C71F023071B8C007AB2F0 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C71EF23071B8C007AB2F0 /* AppState.swift */; };
 		899C71F223071FD7007AB2F0 /* NowPlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C71F123071FD7007AB2F0 /* NowPlayingState.swift */; };
 		899C71F423071FEE007AB2F0 /* PopularMoviesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C71F323071FEE007AB2F0 /* PopularMoviesState.swift */; };
@@ -49,6 +50,7 @@
 		8965D93823048C15001519BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8965D93A23048C15001519BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8965D9492305F334001519BE /* TheMovieDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBAPI.swift; sourceTree = "<group>"; };
+		897F344A230C9D77009D5CA0 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		899C71EF23071B8C007AB2F0 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		899C71F123071FD7007AB2F0 /* NowPlayingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingState.swift; sourceTree = "<group>"; };
 		899C71F323071FEE007AB2F0 /* PopularMoviesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesState.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		8965D9442305F29F001519BE /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				897F344A230C9D77009D5CA0 /* Actions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				899C71FA23072833007AB2F0 /* AppReducer.swift in Sources */,
 				7F4EAB9A230C66740005F65E /* NowPlayingFullCollectionViewController.swift in Sources */,
 				7F58CB952307397F005AD558 /* PopularMoviewsTableViewCell.swift in Sources */,
+				897F344B230C9D77009D5CA0 /* Actions.swift in Sources */,
 				899C71F023071B8C007AB2F0 /* AppState.swift in Sources */,
 				7FD1764A230B3154009ECDED /* MoviesStruct.swift in Sources */,
 			);
@@ -469,7 +473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X7GM9H5PAT;
+				DEVELOPMENT_TEAM = P7WV6D6894;
 				INFOPLIST_FILE = "$(SRCROOT)/TheMovieDB/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,7 +494,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X7GM9H5PAT;
+				DEVELOPMENT_TEAM = P7WV6D6894;
 				INFOPLIST_FILE = "$(SRCROOT)/TheMovieDB/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
