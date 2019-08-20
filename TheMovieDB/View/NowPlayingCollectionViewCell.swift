@@ -13,4 +13,6 @@ class NowPlayingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
+    var movieDescription: String = ""
+    var genre: [String] = []
 }

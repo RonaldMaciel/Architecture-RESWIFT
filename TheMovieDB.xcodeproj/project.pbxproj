@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F4EAB98230C663A0005F65E /* NowPlayingFullCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4EAB97230C663A0005F65E /* NowPlayingFullCollectionViewCell.swift */; };
+		7F4EAB9A230C66740005F65E /* NowPlayingFullCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4EAB99230C66740005F65E /* NowPlayingFullCollectionViewController.swift */; };
 		7F58CB952307397F005AD558 /* PopularMoviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58CB942307397E005AD558 /* PopularMoviewsTableViewCell.swift */; };
+		7F7F5025230C5D1D004A1BE3 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F5024230C5D1D004A1BE3 /* CustomImageView.swift */; };
 		7FA7137123072D4000258641 /* NowPlayingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7137023072D4000258641 /* NowPlayingTableViewCell.swift */; };
 		7FA713742307307500258641 /* NowPlayingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA713732307307500258641 /* NowPlayingCollectionViewCell.swift */; };
+		7FB5C82F230C7C0B00B1BC65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5C82E230C7C0B00B1BC65 /* DetailViewController.swift */; };
 		7FD1764A230B3154009ECDED /* MoviesStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD17649230B3154009ECDED /* MoviesStruct.swift */; };
 		8965D92F23048C15001519BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965D92E23048C15001519BE /* AppDelegate.swift */; };
-		8965D93123048C15001519BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965D93023048C15001519BE /* ViewController.swift */; };
 		8965D93423048C15001519BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8965D93223048C15001519BE /* Main.storyboard */; };
 		8965D93623048C15001519BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8965D93523048C15001519BE /* Assets.xcassets */; };
 		8965D93923048C15001519BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8965D93723048C15001519BE /* LaunchScreen.storyboard */; };
@@ -31,13 +34,16 @@
 		3C1E070A8A6DB944431C3A90 /* Pods-TheMovieDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDB.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieDB/Pods-TheMovieDB.debug.xcconfig"; sourceTree = "<group>"; };
 		507D69D3F0C81BAA298CF9AD /* Pods_TheMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CA374EC2D583D4C2B4C884 /* Pods-TheMovieDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDB.release.xcconfig"; path = "Target Support Files/Pods-TheMovieDB/Pods-TheMovieDB.release.xcconfig"; sourceTree = "<group>"; };
+		7F4EAB97230C663A0005F65E /* NowPlayingFullCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFullCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F4EAB99230C66740005F65E /* NowPlayingFullCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFullCollectionViewController.swift; sourceTree = "<group>"; };
 		7F58CB942307397E005AD558 /* PopularMoviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviewsTableViewCell.swift; sourceTree = "<group>"; };
+		7F7F5024230C5D1D004A1BE3 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		7FA7137023072D4000258641 /* NowPlayingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTableViewCell.swift; sourceTree = "<group>"; };
 		7FA713732307307500258641 /* NowPlayingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCollectionViewCell.swift; sourceTree = "<group>"; };
+		7FB5C82E230C7C0B00B1BC65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7FD17649230B3154009ECDED /* MoviesStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesStruct.swift; sourceTree = "<group>"; };
 		8965D92B23048C15001519BE /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8965D92E23048C15001519BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8965D93023048C15001519BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8965D93323048C15001519BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8965D93523048C15001519BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8965D93823048C15001519BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,6 +129,8 @@
 				7FA7137023072D4000258641 /* NowPlayingTableViewCell.swift */,
 				7FA713732307307500258641 /* NowPlayingCollectionViewCell.swift */,
 				7F58CB942307397E005AD558 /* PopularMoviewsTableViewCell.swift */,
+				7F7F5024230C5D1D004A1BE3 /* CustomImageView.swift */,
+				7F4EAB97230C663A0005F65E /* NowPlayingFullCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,8 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				899C71F7230722C3007AB2F0 /* MainViewController.swift */,
+				7F4EAB99230C66740005F65E /* NowPlayingFullCollectionViewController.swift */,
+				7FB5C82E230C7C0B00B1BC65 /* DetailViewController.swift */,
 				7FD17649230B3154009ECDED /* MoviesStruct.swift */,
-				8965D93023048C15001519BE /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,9 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FA713742307307500258641 /* NowPlayingCollectionViewCell.swift in Sources */,
+				7FB5C82F230C7C0B00B1BC65 /* DetailViewController.swift in Sources */,
 				899C71F8230722C3007AB2F0 /* MainViewController.swift in Sources */,
-				8965D93123048C15001519BE /* ViewController.swift in Sources */,
 				899C71F223071FD7007AB2F0 /* NowPlayingState.swift in Sources */,
+				7F7F5025230C5D1D004A1BE3 /* CustomImageView.swift in Sources */,
+				7F4EAB98230C663A0005F65E /* NowPlayingFullCollectionViewCell.swift in Sources */,
 				89EEA4F823072E5E004DA24A /* PopularMoviesReducer.swift in Sources */,
 				8965D92F23048C15001519BE /* AppDelegate.swift in Sources */,
 				7FA7137123072D4000258641 /* NowPlayingTableViewCell.swift in Sources */,
@@ -306,6 +317,7 @@
 				89EEA4F623072E4F004DA24A /* NowPlayingReducer.swift in Sources */,
 				899C71F423071FEE007AB2F0 /* PopularMoviesState.swift in Sources */,
 				899C71FA23072833007AB2F0 /* AppReducer.swift in Sources */,
+				7F4EAB9A230C66740005F65E /* NowPlayingFullCollectionViewController.swift in Sources */,
 				7F58CB952307397F005AD558 /* PopularMoviewsTableViewCell.swift in Sources */,
 				899C71F023071B8C007AB2F0 /* AppState.swift in Sources */,
 				7FD1764A230B3154009ECDED /* MoviesStruct.swift in Sources */,
@@ -457,7 +469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P7WV6D6894;
+				DEVELOPMENT_TEAM = X7GM9H5PAT;
 				INFOPLIST_FILE = "$(SRCROOT)/TheMovieDB/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,7 +490,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P7WV6D6894;
+				DEVELOPMENT_TEAM = X7GM9H5PAT;
 				INFOPLIST_FILE = "$(SRCROOT)/TheMovieDB/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

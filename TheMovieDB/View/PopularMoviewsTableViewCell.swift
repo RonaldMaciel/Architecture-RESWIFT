@@ -13,4 +13,6 @@ class PopularMovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieDescriptionLabel: UILabel!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
+    @IBOutlet weak var movieRatingLabel: UILabel!
+    var genre: [String] = []
 }
