@@ -10,7 +10,10 @@ import Foundation
 import ReSwift
 
 struct PopularMoviesState: StateType {
-    var table: DataState
     var tableState: DataState
-    var movies: [MoviesStruct]
+    var movies: [Movie]?
+    var error: Error?
+    var posters: [String: Data?]?
+    
+    
 }

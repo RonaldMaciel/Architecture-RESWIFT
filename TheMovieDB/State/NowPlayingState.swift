@@ -8,8 +8,10 @@
 import ReSwift
 
 struct NowPlayingState: StateType {
-    var movies: DataState
+    var movies: [Movie]?
     var collectionState: DataState
+    var posters: [String: Data?]?
+    var error: Error?
 }
 
 enum DataState {
